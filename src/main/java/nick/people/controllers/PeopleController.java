@@ -28,6 +28,11 @@ public class PeopleController {
         model.addAttribute("people",personDAO.index());
         return "people/index";
     }
+    @GetMapping("/table")
+    public String showTable(Model model){
+        model.addAttribute("people",personDAO.index());
+        return "people/table";
+    }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model){
