@@ -13,18 +13,18 @@
 
 <table>
     <tr>
-        <th>Number</th>
         <th>Name</th>
+        <th>YearOfBirth</th>
     </tr>
     <tr th:each="person : ${people}">
-        <td th:text="${person.getNumber()}">Value</td>
         <td th:text="${person.getName()}">Value</td>
+        <td th:text="${person.getYearOfBirth()}">Value</td>
     </tr>
 </table>
 <br/>
 <hr/>
 
-<a href="/people/new">Create new Person</a>
+<a href="/people/new">Добавить человека</a>
 
 </body>
 </html>

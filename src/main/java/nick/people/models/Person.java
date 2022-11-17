@@ -1,78 +1,49 @@
 package nick.people.models;
 
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 public class Person {
 
-    private int id;
 
-    @NotEmpty(message = "Name should not be empty")
-    @Size(min = 2, max = 30, message = "Name should be between 2 and 3 characters")
+
+    private int person_id;
+
+
+
+    @NotEmpty(message = "ФИО не должно быть пустым")
+    @Size(min = 2, max = 30, message = "Фио должно быть от 2 до 30 символов")
     private String name;
 
-    @NotEmpty(message = "Email should be empty")
-    @Email(message = "Email should be valid")
-    private String email;
+    @Min(value = 1900,message = "Год рождения должен быть больше  1900" )
+    private int yearOfBirth;
 
-    @NotEmpty(message = "Number should not be empty")
-    @Min(value = 0,message = "Number should be grater than 0" )
-    private String number;
-
-    @Min(value = 0,message = "Age should be grater than 0" )
-    private int age;
-
-    public String getEmail() {
-        return email;
+    public int getYearOfBirth() {
+        return yearOfBirth;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
     }
 
     public Person(){}
     public int getId() {
-        return id;
+        return person_id;
     }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setPerson_id(int person_id) {
+        this.person_id = person_id;
     }
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
 
-
-
-    public Person(int id, String name,int age, String email,String number) {
-        this.number = number;
-        this.id = id;
+    public Person(int person_id, String name,int yearOfBirth) {
+        this.person_id = person_id;
         this.name = name;
-        this.age = age;
-        this.email = email;
+        this.yearOfBirth = yearOfBirth;
     }
 }
