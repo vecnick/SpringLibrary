@@ -7,11 +7,11 @@ public class Person {
 
 
 
-    private int person_id;
+    private int id;
 
 
 
-    @NotEmpty(message = "ФИО не должно быть пустым")
+    @NotEmpty(message = "Введите ФИО")
     @Size(min = 2, max = 30, message = "Фио должно быть от 2 до 30 символов")
     private String name;
 
@@ -28,10 +28,10 @@ public class Person {
 
     public Person(){}
     public int getId() {
-        return person_id;
+        return id;
     }
-    public void setPerson_id(int person_id) {
-        this.person_id = person_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -41,8 +41,7 @@ public class Person {
         this.name = name;
     }
 
-    public Person(int person_id, String name,int yearOfBirth) {
-        this.person_id = person_id;
+    public Person(String name,int yearOfBirth) {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
     }
